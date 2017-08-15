@@ -1,17 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Title of the page -->
   <title>Match Game</title>
+  <!-- Reset the style of main html elements -->
+  <link href="./resources/css/reset.css" rel="stylesheet" type="text/css">
+  <!-- Load the bootstrap styles -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Load Match Game styles  -->
   <link href="./resources/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <div id="GameBoard"></div>
+  <!-- The page content -->
+  <div class="content container-fluid">
+    <!-- Explanation of the games rules -->
+    <div class="GameRules col-sm-3 col-xs-12">
+      <h1>Match Game</h1>
+      <div>
+        <h2>Rules</h2>
+        <p>Click on a card to reveal the number on the other side. Click on a second card to try and find a match to the first. If you succeed, the pair will be removed from play. If not, try again!</p>
+      </div>
+      <div>
+        <h2>How To Win</h2>
+        <p>You win when all pairs have been found.</p>
+      </div>
+    </div>
+    <!-- The game board (It's where the cards will be placed) -->
+    <div id="GameBoard" class="container-fluid col-sm-9 col-xs-12"></div>
+  </div>
+
+  <div id="GameEnded" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title">Game ended</h1>
+        </div>
+        <div class="modal-body">
+          <p>You have found all the pairs !!!</p>
+        </div>
+        <div class="modal-footer">
+          <div class="button btn btn-success">Start a new game</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Import jQuery scripts -->
   <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
+  <!-- Import Bootstrap scripts -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Import game scripts -->
   <script type="text/javascript" src="./resources/js/match-game.js"></script>
+  <!-- Import tests scripts -->
   <script type="text/javascript" src="./resources/js/tests.js"></script>
 </body>
 </html>
