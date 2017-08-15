@@ -13,20 +13,22 @@
 <body>
   <!-- The page content -->
   <div class="content container-fluid">
-    <!-- Explanation of the games rules -->
-    <div class="GameRules col-sm-3 col-xs-12">
-      <h1>Match Game</h1>
-      <div>
-        <h2>Rules</h2>
-        <p>Click on a card to reveal the number on the other side. Click on a second card to try and find a match to the first. If you succeed, the pair will be removed from play. If not, try again!</p>
+    <div class="row">
+      <!-- Explanation of the games rules -->
+      <div class="GameRules col-md-3 col-sm-12">
+        <h1>Match Game</h1>
+        <div>
+          <h2>Rules</h2>
+          <p>Click on a card to reveal the number on the other side. Click on a second card to try and find a match to the first. If you succeed, the pair will be removed from play. If not, try again!</p>
+        </div>
+        <div>
+          <h2>How To Win</h2>
+          <p>You win when all pairs have been found.</p>
+        </div>
       </div>
-      <div>
-        <h2>How To Win</h2>
-        <p>You win when all pairs have been found.</p>
-      </div>
-    </div>
-    <!-- The game board (It's where the cards will be placed) -->
-    <div id="GameBoard" class="container-fluid col-sm-9 col-xs-12"></div>
+      <!-- The game board (It's where the cards will be placed) -->
+      <div id="GameBoard" class="container-fluid col-md-9 col-sm-12"></div>
+	</div>
   </div>
 
   <!-- Once the game is ended we ask to the user if he/she want to restart the game -->
