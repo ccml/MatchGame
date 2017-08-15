@@ -117,17 +117,17 @@ MatchGame.renderCards = function(cardValues, $game) {
 };
 
 /*
-
+  Method that check if the game is ended
  */
 MatchGame.checkGameEnded = function () {
     var $cards = MatchGame.$gameBoard.find('.card'); // We get all the cards
-    var $dummy = $('<div></div>');
-    $dummy.css('background-color', MatchGame.matchFrontSideColor);
+    var $dummy = $('<div></div>'); // We create a dummy element 
+    $dummy.css('background-color', MatchGame.matchFrontSideColor); // And attribute it the front side color of matched card
+	// We filter the cards to retain only cards having the front side color of matched card
     var $matchedCards = $cards.filter(function(index) {
         return $(this).css('background-color') === $dummy.css('background-color');
     });
-    console.log("cards : " + $cards.length);
-    console.log("matchedCards : " + $matchedCards.length);
+	// The game is ended only if all cards have a front side color of matched card
     return $matchedCards.length === $cards.length;
 }
 
@@ -170,7 +170,8 @@ MatchGame.flipCard = function($card, $game) {
       MatchGame.isFlippingCard = false; // We have finished processing the current click
       // We check if all the pairs has been found
       if(MatchGame.checkGameEnded()) {
-          $('#GameEnded').modal("show");
+		  // The game is finished, we show a dialog to ask to the user if we start a new game
+          $('#GameEnded').modal("show"); 
       }
 	}
     else {
@@ -197,8 +198,9 @@ MatchGame.flipCard = function($card, $game) {
  */
 $(document).ready(function() {
   $('.modal-footer .button').click(function() {
-    MatchGame.renderCards(MatchGame.generateCardValues(), $('#GameBoard'));
-    $('#GameEnded').modal('hide');
+    MatchGame.renderCards(MatchGame.generateCardValues(), $('#GameBoard')); // We start a new game
+    $('#GameEnded').modal('hide'); // We hide the dialog
   });
+  // We start automatically a new game when the page is loaded
   MatchGame.renderCards(MatchGame.generateCardValues(), $('#GameBoard'));
 });

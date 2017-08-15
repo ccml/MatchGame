@@ -74,6 +74,9 @@ html, body {
 	justify-content: center;
 }
 
+/*
+  The dialog window is made a little transparent to let the user see the game board
+*/
 #GameEnded {
 	opacity: 0.85;
 }
